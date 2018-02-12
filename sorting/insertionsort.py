@@ -1,30 +1,21 @@
 # insertion sort
-# DOESN'T WORK YET
-array = [23, 6, 1, 90, 30, 39, 99, 15, 88, 0]
+
+array = [23, 6, 1, 90, 39, 30, 99, 15, 88, 0]
 
 print("START: {}".format(array))
 
-if array is None:
-    exit(0)
+# Traverse through 1 to len(arr)
+for i in range(1, len(array)):
+    key = array[i]
 
-i = 0
-while (i + 1) != len(array):
-    if array[i] > array[i + 1]:
-        curr = i + 1
-        array[i], array[i + 1] = array[i + 1], array[i]
-        if (curr - 1) == -1:
-            i = curr
-        print("swap: {}".format(array))
-
-        while (curr - 1) != -1:
-            if array[curr] >= array[curr - 1]:
-                break;
-            prev = curr - 1
-            array[prev], array[curr] = array[curr], array[prev]
-            if curr - 1 == -1:
-                i = curr
-            print("swap: {}".format(array))
-    else:
-        i += 1
+    # Move elements of array[0..i-1], that are
+    # greater than key, to one position ahead
+    # of their current position
+    j = i - 1
+    while j >= 0 and key < array[j] :
+        array[j + 1] = array[j]
+        j -= 1
+    array[j + 1] = key
+    print("{}".format(array))
 
 print("FINAL: {}".format(array))
