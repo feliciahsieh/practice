@@ -3,22 +3,15 @@
 import sys
 
 def caesarCipher(s, k):
-    ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
-    newAlphabet = ALPHABET[k:] + ALPHABET[0:k]
-    print(ALPHABET)
-    print(newAlphabet)
-    encoded = ''
-    for c in s:
-        if c.isalpha():
-            if c.isupper():
-                q = ALPHABET.find(c.lower())
-                encoded += newAlphabet[q].upper()
-            else:
-                q = ALPHABET.find(c)
-                encoded += newAlphabet[q]
+    # Complete this function
+    res = ''
+    for i in s:
+        if i.isalpha():
+            a = 'A' if i.isupper() else 'a'
+            res += chr(ord(a) + ( ord(i) - ord(a) + k) % 26)
         else:
-            encoded += c
-    return encoded
+            res += i
+    return res
 
 if __name__ == "__main__":
     n = int(input().strip())
