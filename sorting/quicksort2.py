@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# quicksort
+# quicksort using helper function
 import time
 
 startTime = time.time()

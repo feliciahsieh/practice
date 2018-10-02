@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# quicksort
+# quicksort using recursion and python3 lists
 import time
 
 startTime = time.time()
@@ -27,7 +27,6 @@ def quicksort(array):
     # Note that you want equal ^^^^^ not pivot
     else:  # Base case: when one element left in array
         return array
-
 
 array = quicksort(array)
 print("\nFINAL:\n{}".format(array))
