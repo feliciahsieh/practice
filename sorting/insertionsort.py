@@ -1,8 +1,12 @@
+#!/usr/bin/python3
 # insertion sort
+import time
+
+startTime = time.time()
 
 array = [23, 6, 1, 90, 39, 30, 99, 15, 88, 0]
 
-print("START: {}".format(array))
+print("START:\n{}\n".format(array))
 
 # Traverse through 1 to len(arr)
 for i in range(1, len(array)):
@@ -18,4 +22,5 @@ for i in range(1, len(array)):
     array[j + 1] = key
     print("{}".format(array))
 
-print("FINAL: {}".format(array))
+print("\nFINAL:\n{}".format(array))
+print("Execution took {:1.6f} sec".format(time.time() - startTime))
