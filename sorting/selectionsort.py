@@ -2,7 +2,6 @@
 # selection sort
 import time
 
-startTime = time.time()
 
 def selectionsort(array=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
     print("START:\n{}\n".format(array))
@@ -15,6 +14,8 @@ def selectionsort(array=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
         print("{}".format(array))
     return array
 
+
+startTime = time.time()
 result = selectionsort()
 print("\nFINAL:\n{}".format(result))
 print("Execution took {:1.6f} sec".format(time.time() - startTime))

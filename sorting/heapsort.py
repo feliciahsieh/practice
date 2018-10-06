@@ -22,8 +22,6 @@ def heapify(arr, leng, index):
         heapify(arr, leng, largest)
 
 
-startTime = time.time()
-
 def heapsort(array=[23, 6, 1, 90, 39, 30, 99, 15, 88, 0]):
     print("START:\n{}\n".format(array))
 
@@ -40,6 +38,9 @@ def heapsort(array=[23, 6, 1, 90, 39, 30, 99, 15, 88, 0]):
 
         print("i:{} {}".format(i, array))
     return array
+
+
+startTime = time.time()
 
 result = heapsort()
 print("\nFINAL:\n{}".format(result))

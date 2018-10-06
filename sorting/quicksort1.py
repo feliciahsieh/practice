@@ -2,7 +2,6 @@
 # quicksort using recursion and python3 lists
 import time
 
-startTime = time.time()
 
 def quicksort(array=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
     less = []
@@ -24,7 +23,9 @@ def quicksort(array=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
     else:  # Base case: when one element left in array
         return array
 
-print("START:\n");
+
+startTime = time.time()
+print("START:\n")
 result = quicksort()
 print("\nFINAL:\n{}".format(result))
 print("Execution took {:1.6f} sec".format(time.time() - startTime))

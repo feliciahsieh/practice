@@ -2,49 +2,52 @@
 # quicksort using helper function
 import time
 
-startTime = time.time()
 
 def quickSort(alist=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
-    print("START:\n{}\n".format(alist));
-    quickSortHelper(alist,0,len(alist)-1)
+    print("START:\n{}\n".format(alist))
+    quickSortHelper(alist, 0, len(alist) - 1)
 
-def quickSortHelper(alist,first,last):
-   if first<last:
-       splitpoint = partition(alist,first,last)
 
-       quickSortHelper(alist,first,splitpoint-1)
-       print(alist)
-       quickSortHelper(alist,splitpoint+1,last)
-       print(alist)
+def quickSortHelper(alist, first, last):
+    if first < last:
+        splitpoint = partition(alist, first, last)
 
-def partition(alist,first,last):
-   pivotvalue = alist[first]
+        quickSortHelper(alist, first, splitpoint - 1)
+        print(alist)
+        quickSortHelper(alist, splitpoint + 1, last)
+        print(alist)
 
-   leftmark = first+1
-   rightmark = last
 
-   done = False
-   while not done:
+def partition(alist, first, last):
+    pivotvalue = alist[first]
 
-       while leftmark <= rightmark and alist[leftmark] <= pivotvalue:
-           leftmark = leftmark + 1
+    leftmark = first + 1
+    rightmark = last
 
-       while alist[rightmark] >= pivotvalue and rightmark >= leftmark:
-           rightmark = rightmark -1
+    done = False
+    while not done:
 
-       if rightmark < leftmark:
-           done = True
-       else:
-           temp = alist[leftmark]
-           alist[leftmark] = alist[rightmark]
-           alist[rightmark] = temp
+        while leftmark <= rightmark and alist[leftmark] <= pivotvalue:
+            leftmark = leftmark + 1
 
-   temp = alist[first]
-   alist[first] = alist[rightmark]
-   alist[rightmark] = temp
+        while alist[rightmark] >= pivotvalue and rightmark >= leftmark:
+            rightmark = rightmark - 1
 
-   return rightmark
+        if rightmark < leftmark:
+            done = True
+        else:
+            temp = alist[leftmark]
+            alist[leftmark] = alist[rightmark]
+            alist[rightmark] = temp
 
+    temp = alist[first]
+    alist[first] = alist[rightmark]
+    alist[rightmark] = temp
+
+    return rightmark
+
+
+startTime = time.time()
 result = quickSort()
 print("\nFINAL:\n{}".format(result))
 print("Execution took {:1.6f} sec".format(time.time() - startTime))

@@ -2,12 +2,9 @@
 # quicksort using recursion and python3 lists
 import time
 
-startTime = time.time()
-
-print("START:\n")
 
 def mergeSort(array=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
-    print("Splitting",array)
+    print("Splitting", array)
     if len(array) > 1:
         mid = len(array) // 2
         lefthalf = array[:mid]
@@ -39,6 +36,10 @@ def mergeSort(array=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
         print("Merging  ", array)
         return array
 
+
+startTime = time.time()
+
+print("START:\n")
 result = mergeSort()
 print("\nFINAL:\n{}".format(result))
 print("Execution time: {} sec".format(time.time() - startTime))
