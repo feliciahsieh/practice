@@ -4,15 +4,12 @@ import time
 
 startTime = time.time()
 
-array = [23, 6, 1, 90, 30, 39, 99, 15, 88, 0]
-print("START:\n{}\n".format(array));
-
-def quickSort(alist):
-   quickSortHelper(alist,0,len(alist)-1)
+def quickSort(alist=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
+    print("START:\n{}\n".format(alist));
+    quickSortHelper(alist,0,len(alist)-1)
 
 def quickSortHelper(alist,first,last):
    if first<last:
-
        splitpoint = partition(alist,first,last)
 
        quickSortHelper(alist,first,splitpoint-1)
@@ -46,10 +43,8 @@ def partition(alist,first,last):
    alist[first] = alist[rightmark]
    alist[rightmark] = temp
 
-
    return rightmark
 
-quickSort(array)
-
-print("\nFINAL:\n{}".format(array))
+result = quickSort()
+print("\nFINAL:\n{}".format(result))
 print("Execution took {:1.6f} sec".format(time.time() - startTime))

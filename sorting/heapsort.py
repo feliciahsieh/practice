@@ -24,22 +24,23 @@ def heapify(arr, leng, index):
 
 startTime = time.time()
 
-# Initial tree is created already
-array = [23, 6, 1, 90, 39, 30, 99, 15, 88, 0]
-print("START:\n{}\n".format(array))
+def heapsort(array=[23, 6, 1, 90, 39, 30, 99, 15, 88, 0]):
+    print("START:\n{}\n".format(array))
 
-length = len(array)
-# Build max heap
-for i in range(length, -1, -1):
-    heapify(array, length, i)
+    length = len(array)
+    # Build max heap
+    for i in range(length, -1, -1):
+        heapify(array, length, i)
 
-# Remove Largest element and reheapify
-for i in range(length-1, 0, -1):
-    # swap root and leaf (leaf becomes largest value)
-    array[0], array[i] = array[i], array[0]
-    heapify(array, i, 0)
+    # Remove Largest element and reheapify
+    for i in range(length-1, 0, -1):
+        # swap root and leaf (leaf becomes largest value)
+        array[0], array[i] = array[i], array[0]
+        heapify(array, i, 0)
 
-    print("i:{} {}".format(i, array))
+        print("i:{} {}".format(i, array))
+    return array
 
-print("\nFINAL:\n{}".format(array))
+result = heapsort()
+print("\nFINAL:\n{}".format(result))
 print("Execution took {:1.6f} sec".format(time.time() - startTime))

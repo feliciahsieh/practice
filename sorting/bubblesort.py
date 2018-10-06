@@ -4,19 +4,18 @@ import time
 
 startTime = time.time()
 
-array = [23, 6, 1, 90, 30, 39, 99, 15, 88, 0]
+def bubblesort(array=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
+    print("START:\n{}\n".format(array));
 
-print("START:\n{}".format(array));
-print()
+    for i in range(len(array)):
+        for j in range(0, len(array) - 1):
+            if (array[j] > array[j + 1]):
+                print("{}".format(array))
+                array[j], array[j + 1] = array[j + 1], array[j]
+    return array
 
-for i in range(len(array)):
-    for j in range(0, len(array) - 1):
-        if (array[j] > array[j + 1]):
-            print("{}".format(array))
-            #temp = array[j]
-            #array[j] = array[j + 1]
-            #array[j + 1] = temp
-            array[j], array[j + 1] = array[j + 1], array[j]
-print("\nFINAL:\n{}".format(array));
+result = bubblesort()
+
+print("\nFINAL:\n{}".format(result));
 
 print("Execution took {:1.6f} sec".format(time.time() - startTime))

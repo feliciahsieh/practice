@@ -4,10 +4,7 @@ import time
 
 startTime = time.time()
 
-array = [23, 6, 1, 90, 30, 39, 99, 15, 88, 0]
-print("START:\n{}\n".format(array));
-
-def quicksort(array):
+def quicksort(array=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
     less = []
     equal = []
     greater = []
@@ -24,10 +21,10 @@ def quicksort(array):
         # Don't forget to return something!
         print("l:{} e:{} g:{}".format(less, equal, greater))
         return quicksort(less) + equal + quicksort(greater)  # Join lists
-    # Note that you want equal ^^^^^ not pivot
     else:  # Base case: when one element left in array
         return array
 
-array = quicksort(array)
-print("\nFINAL:\n{}".format(array))
+print("START:\n");
+result = quicksort()
+print("\nFINAL:\n{}".format(result))
 print("Execution took {:1.6f} sec".format(time.time() - startTime))

@@ -4,13 +4,12 @@ import time
 
 startTime = time.time()
 
-array = [23, 6, 1, 90, 30, 39, 99, 15, 88, 0]
-print("START:\n{}\n".format(array))
+print("START:\n")
 
-def mergeSort(array):
+def mergeSort(array=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
     print("Splitting",array)
     if len(array) > 1:
-        mid = len(array)//2
+        mid = len(array) // 2
         lefthalf = array[:mid]
         righthalf = array[mid:]
 
@@ -36,8 +35,10 @@ def mergeSort(array):
             array[k] = righthalf[j]
             j += 1
             k += 1
-    print("Merging  ", array)
 
-mergeSort(array)
-print("\nFINAL:\n{}".format(array))
+        print("Merging  ", array)
+        return array
+
+result = mergeSort()
+print("\nFINAL:\n{}".format(result))
 print("Execution time: {} sec".format(time.time() - startTime))
