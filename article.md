@@ -105,7 +105,7 @@ Another thing to take note is the definition of failure from a business perspect
 
 Hence, many such systems are designed to shutdown or enter read-only first, where long, manual restoration would be needed instead, to ensure data safety. Which is by design a "partial failure".
 
-And finally... Murphy's' law... means that sometimes multiple nodes or segments of your network infrastructure will fail. You will face situations where the majority vote is lost.
+And finally... Murphy's law... means that sometimes multiple nodes or segments of your network infrastructure will fail. You will face situations where the majority vote is lost.
 
 # How is a redundancy fixed then?
 
