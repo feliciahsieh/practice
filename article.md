@@ -91,7 +91,7 @@ First off... that depends on your definition of failure...
 | System State                    | Description                                                                                                                                                                                  |
 |---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | All 💚                       | Every node and replica is working. Yay!                                                                                                                                                     |
-| Majority of replicas are 💚 | Everything is fine, replicas may be down, but as long as we have the majority, users will not notice a thing as long as we replace those downed replicas in time...                            |
+| Majority of replicas are 💚 | Everything is fine. Replicas may be down, but as long as we have the majority, users will not notice a thing as long as we replace those downed replicas in time...                            |
 | Majority of replicas are 🔴   | Houston, we have a problem. Depending on the system design, it either goes into read-only mode, a hard failure state, or just continue on as per normal (rare) with the rest of the nodes, and suffer from **split brain**. |
 | All 🔴                         | Everything is down. Oops. Hopefully we can recover the cluster or restore those backups. They do exist, right? 😭                                                                              |
 
@@ -131,7 +131,7 @@ And when majority vote is lost, one of three things would occur:
 - Read-only mode : to prevent the system from having 2 different datasets (and hence a split brain)
 - Hard system failure : Some systems prefer inducing a hard failure, rather than causing a split brain.
 
-# Uggh, my head hurts? What is the split brain problem?
+# Ugh, my head hurts? What is the split brain problem?
 
 A split brain starts to occur when your cluster starts splitting into 2 segments. Your system would start seeing two different versions of the same data as the cluster goes out of sync.
 
