@@ -16,7 +16,7 @@ To start : #hugops to the folks at github for fixing their systems. It isn't eas
 
 {% twitter 1054388569433731072 %}
 
-And appparently, while distributed data storage is used everywhere in the cloud, not many developers truly understand it...
+And apparently, while distributed data storage is used everywhere in the cloud, not many developers truly understand it...
 
 So, what is distributed storage? Why does every major cloud provider use it? And, why and how do they fail?
 
