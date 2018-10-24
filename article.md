@@ -137,7 +137,7 @@ A split brain starts to occur when your cluster starts splitting into 2 segments
 
 This happens most commonly when a network failure causes half of the cluster to be isolated from the other half. 
 
-What happens subsequently if data change were to occur, is that half of the system would be updated with the other half out-dated.
+What happens subsequently if data change were to occur, is that half of the system would be updated with the other half outdated.
 
 This is "alright" until the other half comes back online. And the data might be out of sync or even changed due to usage with the other half of the cluster.
 
