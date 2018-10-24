@@ -84,7 +84,7 @@ Without going into how any one distributed system works, in general.
 
 - One of the most important recurring thing to take note, however, is the system requirement for majority vote for many operations, among all redundancies for the system to work.
 
-# With so many redundancy in place, how does it still fail?
+# With so many redundancies in place, how does it still fail?
 
 First off... that depends on your definition of failure...
 
