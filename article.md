@@ -39,7 +39,7 @@ Data replica could either be stored as exact whole copies or compressed into mul
 
 Regardless of storage method used, this helps ensure that there are X copies of data stored across Y servers. Where X <= Y. (For example, 3 replicas across 5 servers).
 
-# Ughh complex math, why do we do this?
+# Ugh complex math, why do we do this?
 
 In large scale systems, it is not a question of ["if"](https://blog.codecentric.de/en/2013/11/hardware-will-fail-just-way-expect/) a server will fail, but ["when"](https://www.statista.com/statistics/430769/annual-failure-rates-of-servers/). After all, with the amount of hardware, it's pretty much a [statistical fact](https://en.wikipedia.org/wiki/Mean_time_between_failures).
 
