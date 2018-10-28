@@ -9,4 +9,6 @@
 - Bubblesort
 - Selection Sort
 - Insertion Sort
-- Quicksort
+- Quicksort (2 ways)
+- Mergesort
+- Shellsort
