@@ -1,14 +1,19 @@
-#!/bin/python3
+#!/usr/bin/python3
 
+import math
+import os
+import random
+import re
 import sys
 
+# Complete the staircase function below.
 def staircase(n):
-    # Complete this function
-    for i in range(1, n+1):
-        print(" "*(n-i) + "#"*i)
+    if n <= 0:
+        print()
+    for i in range(0, n):
+        print(" "*(n-i-1), "#"*(i+1), "\n", end="", sep="")
 
-if __name__ == "__main__":
-    n = int(input().strip())
+if __name__ == '__main__':
+    n = int(input())
+
     staircase(n)
-
-#staircase(6)
