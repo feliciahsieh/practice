@@ -1,9 +1,10 @@
 # Virtustream Fibonacci app
 
-<img src="fibonacci.jpg" style="height:100px" />
+<p align="center"><img src="fibonacci.jpg" style="height:100px" /></p>
 
 ## Welcome
 REST app that sends the requested elements of the Fibonacci sequence.
+
 First series of Fibonacci starts with 0, 1, 1, 2, 3, ...
 
 Test files are in the ```tests``` directory.
