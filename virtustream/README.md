@@ -39,10 +39,11 @@ git clone https://github.com/feliciahsieh/practice/virtustream/fibonacci.git
 
 ## Usage
 In one vagrant window, run (and leave it running):
-```sh
+```
 ./app.py
 ```
 
 In second vagrant window, run
-```curl 127.0.0.1 ....[to be updated]
+```
+curl 127.0.0.1 ....[to be updated]
 ```
