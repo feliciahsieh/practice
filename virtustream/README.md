@@ -1,6 +1,6 @@
 # Virtustream Fibonacci app
 
-<img src="fibonacci.jpg" style="height:15%;width:15%" />
+<img src="fibonacci.jpg" style="height:100px" />
 
 ## Welcome
 REST app that sends the requested elements of the Fibonacci sequence. Uses python, flak, curl for testing.
