@@ -20,14 +20,14 @@ This app uses python, flask. Curl is used for testing.
 
 
 ## Environment
+* Ubuntu 14.04 LTS
 * Vagrant 2.0.2
-* SSH
+* SSH (for logging into vagrant)
+* curl 7.35.0
 
-Python is installed in /usr/bin/python3. You may have to adjust the directory path to your python source files accordingly in each of the *.py files.
 
 ## Requirements
-* Ubuntu 14.04 LTS
-* Python 3.4.2
+* Python 3.4.2 - Python is installed in /usr/bin/python3. You may have to adjust the directory path to your python source files accordingly in each of the *.py files.
 * Flask 0.12.2
 * setuptools
 
