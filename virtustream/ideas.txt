@@ -1,0 +1,55 @@
+SOFTWARE
+--------
+Installable python distribution - use Git and list of dependencies in "requires" list in setup.py file. Ansible or Puppet can be used to standard sw app distributions.
+
+Revision control for the fibonacci code base and configs. Also configs for the webserver itself.
+
+SSH and/or other encryption should be installed on servers and DNS servers to ensure security. Install some type of network monitoring solution from "bad" IP's. Set the proper ACL lists on the routers.
+
+Have logging function turned on the servers to recreate any bad incidents, like the servers going down or if a hacker gets in.
+
+Pick Nginx or Apache webserver and standardize deployment if possible.
+
+The server OS may need to be upgraded to the latest version in 5 years time or some time sooner than that. All of the dependences may also need to be updated.
+
+The server OS may need a patch, so someone needs to monitor the OS updates, espcially any security updates. Same thing for any software needed for the setup (python3, flask, etc).
+
+The end of Unix Time will occur on January 19, 2038 03:14:07 GMT. Not sure how this affects servers and how this should be handled. Y2K was a dud. [This is beyond 5 years]
+
+Hardcode the first 50? Fibonacci sequences into code to minimize dynamic calculation of elements (not that the calcuation is difficult). Fibonacci numbers do not change. Values are fixed. Can offload static data and traffic to Cloudflare's caches.
+
+My solution does not have containers or Kubernetes, but may if it's production.
+
+NETWORK
+-------
+Each Web server has local redundancy and is hosted at 2 different ISP's or more.
+
+Each Web server is load balanced should the load burst beyond the network pipe speed.
+
+May want to turn on ufw as a simple but double-safeguard against unauthorized access.
+
+Use Cloudflare to mitigate DDOS attacks. Use their CDN to offload the webserver. Most of the data will probably be cacheable and can use their Railgun app. Traffic can be offloaded onto their network anyways saving Virtustream bandwidth. And it's free or minimal.
+
+The domain name needs to be renewed every year or few years. Must pay for DNS registration and must not let this lapse. If the ISP charges for SSH access then payment needs to be made as well. If this is run on AWS/Digital Ocean/etc, then the AWS bill needs to be paid.
+
+Would be nice to have access to a Lab area for Unit and System testing.
+
+Webservers should be rebooted periodically, every 3 months? at an opportune time so as not to inconvenience users. Maybe 3am on a Sunday EST? Must consider if the app is on a dedicated or shared server.
+
+NETWORK MONITORING
+------------------
+PagerDuty to track health of server(s). Other NMS' (Nagios, Datadog) can be used.
+
+HARDWARE
+--------
+Webserver may go down if disk drive fails, network port dies, fan dies, uP dies, HW aged out, etc. So, contingency plans for downtime need to be planned out. NOC needs to be notified as well as IT, product manager?, project manager? May need to switch service to another server. As much testing should be done and should pass before cutover. Need parts replacement plan if necessary. Need SLA from 3rd party vendor?
+
+STAFF
+-----
+Escalation path of 3 individuals or managers for emergencies for fibonacci app. Info is somewhere easily accessible.
+
+Need Remote hands service on physical servers if needed to reach data center. Depends on cost. Another option is to have a network backdoor to remote login (out-of-band port, maybe dial-in).
+
+All fibonacci app documentation should be in a central, internal company location, maybe a wiki. Any sensitive information, like passwords or ssh keys, should be stored in safe areas, maybe onepassword with a select number of people given access.
+
+If there is an incident that is significant, research what must be done to prevent it from happening again.
