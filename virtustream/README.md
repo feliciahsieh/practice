@@ -55,6 +55,6 @@ In second vagrant window, run
 curl 0.0.0.0:5000/<n>    <- where <n> is the Fibonacci sequence you want
 ```
 
-Here's a screenshot of a number of queries:
+Here's the screenshot of both vagrant windows after running a number of queries:
 
 <p align="center"><img src="webSvcFibonacci.png" style="height:200px" /></p>
