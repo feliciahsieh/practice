@@ -23,18 +23,24 @@ This app uses python, flask. Curl is used for testing.
 * Vagrant 2.0.2
 * SSH
 
+Python is installed in /usr/bin/python3. You may have to adjust the directory path to your python source files accordingly in each of the *.py files.
 
 ## Requirements
 * Ubuntu 14.04 LTS
 * Python 3.4.2
 * Flask 0.12.2
-
+* setuptools
 
 ## Installation
 In your terminal window, git clone the directory with the following command:
 
 ```
 git clone https://github.com/feliciahsieh/practice/virtustream/fibonacci.git
+```
+
+To install setuptools for python 3.x:
+```
+sudo apt-get install python3-setuptools
 ```
 
 
