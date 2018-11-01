@@ -29,7 +29,7 @@ This app uses python, flask. Curl is used for testing.
 ## Requirements
 * Python 3.4.2 - Python is installed in /usr/bin/python3. You may have to adjust the directory path to your python source files accordingly in each of the *.py files.
 * Flask 0.12.2
-* setuptools
+
 
 ## Installation
 In your terminal window, git clone the directory with the following command:
@@ -52,5 +52,9 @@ In one vagrant window, run (and leave it running):
 
 In second vagrant window, run
 ```
-curl 127.0.0.1 ....[to be updated]
+curl 0.0.0.0:5000/<n>    <- where <n> is the Fibonacci sequence you want
 ```
+
+Here's a screenshot of a number of queries:
+
+<p align="center"><img src="webSvcFibonacci.jpg" style="height:200px" /></p>
