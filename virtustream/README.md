@@ -57,4 +57,4 @@ curl 0.0.0.0:5000/<n>    <- where <n> is the Fibonacci sequence you want
 
 Here's the screenshot of both vagrant windows after running a number of queries:
 
-<p align="center"><img src="webSvcFibonacci.png" style="height:200px" /></p>
+<p align="center"><img src="webSvcFibonacci.png" style="height:100px" /></p>
