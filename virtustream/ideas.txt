@@ -22,9 +22,9 @@ My solution does not have containers or Kubernetes, but may if it's production.
 
 NETWORK
 -------
-Each Web server has local redundancy and is hosted at 2 different ISP's or more.
+Each Web server should have local redundancy and should be hosted at 2 different ISP's or more.
 
-Each Web server is load balanced should the load burst beyond the network pipe speed.
+Each Web server should be load balanced should a bandwidth burst beyond the network pipe speed.
 
 May want to turn on ufw as a simple but double-safeguard against unauthorized access.
 

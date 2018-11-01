@@ -3,11 +3,14 @@
 <p align="center"><img src="fibonacci.jpg" style="height:100px" /></p>
 
 ## Welcome
-REST app that sends the requested elements of the Fibonacci sequence.
+This a simple REST API that sends the elements of the Fibonacci sequence as specified by a browser request using python and flask. There is only 1 endpoint, n, that represents the quantity of numbers requested.
 
-First series of Fibonacci starts with 0, 1, 1, 2, 3, ...
+Fibonacci numbers are created depending on the sum of the last 2 numbers with the initial numbers as 0 and 1 (Some sequences start with 1 but that's the not case here).
 
-Test files are in the ```tests``` directory.
+And so, the first numbers of a Fibonacci sequence starts with 0, 1, 1, 2, 3, ...
+Read more on [Fibonacci Numbers](https://en.wikipedia.org/wiki/Fibonacci_number).
+
+A test file is in the ```tests``` directory.
 
 This app uses python, flask. Curl is used for testing.
 
@@ -38,12 +41,6 @@ In your terminal window, git clone the directory with the following command:
 git clone https://github.com/feliciahsieh/practice/virtustream/fibonacci.git
 ```
 
-To install setuptools for python 3.x:
-```
-sudo apt-get install python3-setuptools
-```
-
-
 ## Usage
 In one vagrant window, run (and leave it running):
 ```
@@ -52,18 +49,10 @@ In one vagrant window, run (and leave it running):
 
 In second vagrant window, run the curl command using port 5000.
 ```
-curl 0.0.0.0:5000/<n>    <- where <n> is the Fibonacci sequence you want
+curl 0.0.0.0:5000/<n>   <- where <n> is the Fibonacci sequence you want
 ```
 
 Here's the screenshot of both vagrant windows after running a number of queries, where,
-n = 0
-n = 1
-n = 2
-n = 3
-n = 4
-n = 5
-n = 6
-n = 7
-n = 16
+n = 0, n = 1, n = 2, n = 3, n = 4, n = 5, n = 6, n = 7, n = 16
 
 <p align="center"><img src="webSvcFibonacci.png" style="height:200px" /></p>
