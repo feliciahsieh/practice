@@ -50,11 +50,20 @@ In one vagrant window, run (and leave it running):
 ./app.py
 ```
 
-In second vagrant window, run
+In second vagrant window, run the curl command using port 5000.
 ```
 curl 0.0.0.0:5000/<n>    <- where <n> is the Fibonacci sequence you want
 ```
 
-Here's the screenshot of both vagrant windows after running a number of queries:
+Here's the screenshot of both vagrant windows after running a number of queries, where,
+n = 0
+n = 1
+n = 2
+n = 3
+n = 4
+n = 5
+n = 6
+n = 7
+n = 16
 
-<p align="center"><img src="webSvcFibonacci.png" style="height:100px" /></p>
+<p align="center"><img src="webSvcFibonacci.png" style="height:200px" /></p>
