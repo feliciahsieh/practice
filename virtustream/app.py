@@ -9,8 +9,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-#    return "Hello, World!\n"
-    return str(fibonacci(5))
+    return("Welcome to the world of Fibonacci numbers\n")
+
+@app.route('/<n>')
+def runProgram(n):
+    return str(fibonacci(n)) + "\n"
 
 if __name__ == '__main__':
     app.run(debug=True)
