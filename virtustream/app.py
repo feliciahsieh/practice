@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return("Welcome to the world of Fibonacci numbers\n")
+    return("Welcome to the world of Fibonacci numbers (fh)\n")
 
 @app.route('/<n>')
 def runProgram(n):

@@ -38,7 +38,7 @@ This app uses python, flask. Curl is used for testing.
 In your terminal window, git clone the directory with the following command:
 
 ```
-git clone https://github.com/feliciahsieh/practice/virtustream/fibonacci.git
+git clone https://github.com/feliciahsieh/virtustream.git
 ```
 
 ## Usage
