@@ -18,7 +18,8 @@ fullSet = {1, 2, 3, 4, 5, 6, 7, 8, 9}
 
 
 def createPossible():
-    # Create possible values for each Cell
+    # Create Possible values of 1..9 for each Cell
+
     for row in range(0, GRIDSIZE):
         for col in range(0, GRIDSIZE):
             if grid[row][col] == 0:
@@ -36,7 +37,8 @@ def createPossible():
 
 
 def updateGrid():
-    # Process grid with Possible array values
+    # Process grid with Possible array values as cells are solved
+
     for row in range(0, GRIDSIZE):
         for col in range(0, GRIDSIZE):
             # Found correct cell value = Only 1 possible value
@@ -66,6 +68,8 @@ def updateGrid():
 
 
 def isSolved():
+    # Checks if sudoku puzzle is completely solved in row, column, and 3x3 cube
+
     # Check each row
     isRowGood = True
     for row in range(0, GRIDSIZE):
@@ -89,17 +93,23 @@ def isSolved():
 
 
 def printStatus():
+    # Print status of cubes. Used for testing only
+
     unique, counts = np.unique(grid, return_counts=True)
     # print("counts: {}".format(dict(zip(unique, counts))))
     return counts
 
 
 def printGrid():
+    # Print entire sudoku grid. Used for output and testing
+
     for row in range(0, GRIDSIZE):
         print("{}".format(grid[row]))
 
 
 def printP():
+    # Print Possible values. Used for testing only
+
     for row in range(0, GRIDSIZE):
         for col in range(0, GRIDSIZE):
             if col % 3 == 0:
@@ -112,16 +122,17 @@ def printP():
 with open('sudoku.json', encoding='utf-8') as f:
     data = json.loads(f.read())
 
-grid = np.array(data['puzzle'][0], dtype=np.uint8)
+for num in range(len(data['puzzle'])):
+    grid = np.array(data['puzzle'][num], dtype=np.uint8)
 
-print("The original sudoku is:")
-printGrid()
+    print("\nThe original sudoku is:")
+    printGrid()
 
-createPossible()
-while not isSolved():
-    updateGrid()
-    count = printStatus()
-    # print("{} left to fill".format(count[0]))
+    createPossible()
+    while not isSolved():
+        updateGrid()
+        count = printStatus()
+        # print("{} left to fill".format(count[0]))
 
-print("\nThe solution is:")
-printGrid()
+    print("\nThe solution is:")
+    printGrid()
