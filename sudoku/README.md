@@ -1,9 +1,10 @@
 # Sudoku
-
-<img src="SudokuGrid.png" style="height:15%;width:15%" />
+<p style="text-align: center;">
+   <img src="SudokuGrid.png" style="height:15%;width:15%" />
+</p>
 
 ## Welcome
-Thanks for visiting my Sudoku project. It is written in Python3 with a few libraries. The code will solve Easy-rated puzzles.
+This program solves the Sudoku project by calculating the set of possible values, then as each cell is solved, updates the list of possibilities. This program is written in Python3 with a few libraries. The code will solve Easy-rated puzzles.
 
 ## Table of Contents
 * [Requirements](#requirements)
@@ -31,7 +32,7 @@ To solve the sudoku puzzles stored in sudoku.json, at your shell prompt, type:
 ./sudoku.py
 ```
 
-You can store as many sudoku files as you want. My file has two.
+You can store as many sudoku files as you want. My file has two unsolved puzzles.
 ```
 {
   "puzzle":[
