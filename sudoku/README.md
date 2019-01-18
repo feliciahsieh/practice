@@ -1,5 +1,5 @@
 # Sudoku
-<p style="text-align: center;">
+<p align="center">
    <img src="SudokuGrid.png" style="height:15%;width:15%" />
 </p>
 
@@ -32,7 +32,7 @@ To solve the sudoku puzzles stored in sudoku.json, at your shell prompt, type:
 ./sudoku.py
 ```
 
-You can store as many sudoku files as you want. My file has two unsolved puzzles.
+You may store as many sudoku files as you need. My sudoku.json file has two unsolved puzzles.
 ```
 {
   "puzzle":[
