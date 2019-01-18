@@ -1,37 +1,12 @@
 #!/usr/bin/python3
+# Sudoku.py - solves a sudoku 9x9 puzzle from a json file
 
+import json
 import numpy as np
-
+from pprint import pprint
 
 EMPTYCELL = 0
 GRIDSIZE = 9
-
-grid = np.array([
-    [3, 6, 0, 2, 0, 5, 0, 0, 0],
-    [0, 1, 5, 4, 0, 3, 0, 8, 0],
-    [0, 0, 4, 9, 1, 0, 0, 0, 0],
-
-    [4, 5, 7, 0, 0, 0, 0, 9, 1],
-    [0, 0, 2, 0, 0, 0, 3, 0, 0],
-    [8, 3, 0, 0, 0, 0, 7, 6, 4],
-
-    [0, 0, 0, 0, 9, 4, 8, 0, 0],
-    [0, 2, 0, 3, 0, 6, 1, 4, 0],
-    [0, 0, 0, 8, 0, 2, 0, 7, 9]
-], dtype=np.uint8)
-#grid = np.array([
-#    [4, 5, 0, 8, 0, 0, 9, 0, 0],
-#    [0, 9, 0, 0, 5, 6, 0, 0, 4],
-#    [1, 0, 0, 0, 0, 0, 0, 0, 7],
-
-#    [2, 6, 0, 5, 4, 0, 0, 9, 0],
-#    [0, 0, 4, 1, 0, 2, 3, 0, 0],
-#    [0, 7, 0, 0, 6, 9, 0, 4, 8],
-
-#    [7, 0, 0, 0, 0, 0, 0, 0, 9],
-#    [8, 0, 0, 4, 9, 0, 0, 7, 0],
-#    [0, 0, 9, 0, 0, 3, 0, 2, 5]
-#], dtype=np.uint8)
 
 # P is an array of Possible values for each cell
 P = np.empty(shape=[GRIDSIZE, GRIDSIZE], dtype=object)
@@ -40,6 +15,7 @@ for r in range(0, GRIDSIZE):
         P[r, c] = []
 
 fullSet = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+
 
 def createPossible():
     # Create possible values for each Cell
@@ -57,6 +33,7 @@ def createPossible():
                 colStart = (col//3) * 3
                 P[row][col] = list(c - set(
                     grid[rowStart:rowStart+3, colStart:colStart+3].flatten()))
+
 
 def updateGrid():
     # Process grid with Possible array values
@@ -87,45 +64,56 @@ def updateGrid():
                         if singleton in P[i, j]:
                             P[i, j].remove(singleton)
 
+
 def isSolved():
     # Check each row
     isRowGood = True
     for row in range(0, GRIDSIZE):
         isRowGood &= (set(grid[row]) == fullSet)
-    #print("isSolved: Rows are Good...{}".format(isRowGood))
+    # print("isSolved: Rows are Good...{}".format(isRowGood))
 
     # Check each column
     isColGood = True
     for col in range(0, GRIDSIZE):
         isColGood &= (set(grid[:, col]) == fullSet)
-    #print("isSolved: Cols are Good...{}".format(isColGood))
+    # print("isSolved: Cols are Good...{}".format(isColGood))
 
     # Check each cube
     isCubeGood = True
-    for cubeRow in range(0, GRIDSIZE, 3):
-        for cubeCol in range(0, GRIDSIZE, 3):
-            isCubeGood &= (set(grid[cubeRow:cubeRow+3, cubeCol:cubeCol+3].flatten()) == fullSet)
-    #print("isSolved: Cubes are Good...{}".format(isCubeGood))
+    for cRow in range(0, GRIDSIZE, 3):
+        for cCol in range(0, GRIDSIZE, 3):
+            isCubeGood &= (
+                set(grid[cRow:cRow+3, cCol:cCol+3].flatten()) == fullSet)
+    # print("isSolved: Cubes are Good...{}".format(isCubeGood))
     return isRowGood and isColGood and isCubeGood
+
 
 def printStatus():
     unique, counts = np.unique(grid, return_counts=True)
-    #print("counts: {}".format(dict(zip(unique, counts))))
+    # print("counts: {}".format(dict(zip(unique, counts))))
     return counts
+
 
 def printGrid():
     for row in range(0, GRIDSIZE):
         print("{}".format(grid[row]))
 
+
 def printP():
     for row in range(0, GRIDSIZE):
         for col in range(0, GRIDSIZE):
-            if col%3 == 0:
-                print("\nP({},{})---".format(row,col), end="")
+            if col % 3 == 0:
+                print("\nP({},{})---".format(row, col), end="")
             print("{}  ".format(P[row][col]), end="")
     print()
 
-# main program
+
+# Main program, sudoku.py
+with open('sudoku.json', encoding='utf-8') as f:
+    data = json.loads(f.read())
+
+grid = np.array(data['puzzle'][0], dtype=np.uint8)
+
 print("The original sudoku is:")
 printGrid()
 
@@ -133,7 +121,7 @@ createPossible()
 while not isSolved():
     updateGrid()
     count = printStatus()
-    #print("{} left to fill".format(count[0]))
+    # print("{} left to fill".format(count[0]))
 
 print("\nThe solution is:")
 printGrid()
