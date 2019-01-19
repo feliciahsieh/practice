@@ -4,7 +4,7 @@
 </p>
 
 ## Welcome
-This program solves the Sudoku project by calculating the set of possible values, then as each cell is solved, updates the list of possibilities. This program is written in Python3 with a few libraries. The code will solve Easy-rated puzzles.
+This program solves the Sudoku project by calculating the set of possible values, then as each cell is solved, updates the list of possibilities. This program is written in Python3 with a few libraries. The code will solve Easy-rated puzzles. My blog on how I created this program is at https://medium.com/@feliciaSWE/solving-sudoku-with-python-numpy-and-set-95ca55f9ba01
 
 ## Table of Contents
 * [Requirements](#requirements)
