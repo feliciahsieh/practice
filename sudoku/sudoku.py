@@ -128,8 +128,12 @@ def initialize():
 def sudoku():
     # Solves Easy-rated sudoku puzzles iteratively
 
-    with open('sudoku.json', encoding='utf-8') as f:
-        data = json.loads(f.read())
+    try:
+        with open('sudoku.json', encoding='utf-8') as f:
+            data = json.loads(f.read())
+    except ValueError as e:
+        print("sudoku.py(): Error in sudoku.json file")
+        print("{}".format(e))
 
     for num in range(len(data['puzzle'])):
         grid = np.array(data['puzzle'][num], dtype=np.uint8)
@@ -140,14 +144,21 @@ def sudoku():
         possibleValues = initialize()
 
         possibleValues = createPossible(grid, possibleValues)
-        while not isSolved(grid):
+
+        # Arbitrary upper bound for attempts (ie if Intermediate attempted
+        attempts = 0
+        while not isSolved(grid) and attempts < 300:
             #printStatus(grid)
             grid, possibleValues = updateGrid(grid, possibleValues)
             #count = printStatus(grid)
             #print("{} left to fill".format(count[0]))
+            attempts += 1
 
-        print("\nThe solution is:")
-        printGrid(grid)
+        if attempts < 300:
+            print("\nThe solution is:")
+            printGrid(grid)
+        else:
+            print("\nExceeded max num of attempts. Did you enter an Intermediate- or Hard-rated Sudoku puzzle?")
 
 
 # Main program
@@ -155,4 +166,4 @@ start = time.time()
 sudoku()
 end = time.time()
 print("Time to run: {}".format(end - start))
-# time to run iteratively: 0.02588820457458496
+# time to run iteratively: 0.14157533645629883
