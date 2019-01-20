@@ -4,6 +4,7 @@
 import json
 import numpy as np
 from pprint import pprint
+import time
 
 EMPTYCELL = 0
 GRIDSIZE = 9
@@ -23,13 +24,13 @@ def createPossible():
     for row in range(0, GRIDSIZE):
         for col in range(0, GRIDSIZE):
             if grid[row][col] == 0:
-                # Create possible values in rows
+                # Create possible values in row and subract from full set
                 r = fullSet - set(grid[row])
 
-                # Create possible values in columns
+                # Create possible values in column and subtract
                 c = r - set(grid[:, col])
 
-                # Create possible values in cubes
+                # Create possible values in cube and subtract
                 rowStart = (row//3) * 3
                 colStart = (col//3) * 3
                 P[row][col] = list(c - set(
@@ -71,22 +72,19 @@ def isSolved():
     # Checks if sudoku puzzle is completely solved in row, column, and 3x3 cube
 
     # Check each row
-    isRowGood = True
     for row in range(0, GRIDSIZE):
-        isRowGood &= (set(grid[row]) == fullSet)
+        isRowGood = (set(grid[row]) == fullSet)
     # print("isSolved: Rows are Good...{}".format(isRowGood))
 
     # Check each column
-    isColGood = True
     for col in range(0, GRIDSIZE):
-        isColGood &= (set(grid[:, col]) == fullSet)
+        isColGood = (set(grid[:, col]) == fullSet)
     # print("isSolved: Cols are Good...{}".format(isColGood))
 
     # Check each cube
-    isCubeGood = True
     for cRow in range(0, GRIDSIZE, 3):
         for cCol in range(0, GRIDSIZE, 3):
-            isCubeGood &= (
+            isCubeGood = (
                 set(grid[cRow:cRow+3, cCol:cCol+3].flatten()) == fullSet)
     # print("isSolved: Cubes are Good...{}".format(isCubeGood))
     return isRowGood and isColGood and isCubeGood
@@ -119,6 +117,8 @@ def printP():
 
 
 # Main program, sudoku.py
+start = time.time()
+
 with open('sudoku.json', encoding='utf-8') as f:
     data = json.loads(f.read())
 
@@ -131,8 +131,12 @@ for num in range(len(data['puzzle'])):
     createPossible()
     while not isSolved():
         updateGrid()
-        count = printStatus()
+        # count = printStatus()
         # print("{} left to fill".format(count[0]))
 
     print("\nThe solution is:")
     printGrid()
+
+end = time.time()
+print("Time to run: {}".format(end - start))
+# time to run iteratively: 0.02588820457458496
