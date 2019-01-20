@@ -32,7 +32,7 @@ To solve the sudoku puzzles stored in sudoku.json, at your shell prompt, type:
 ./sudoku.py
 ```
 
-You may store as many sudoku files as you want solved. The current sudoku.json file has two unsolved puzzles.
+You may store as many sudoku files as you want solved. The current sudoku.json file has 5 puzzles (4 Easy-rated and 1 Intermediate-rated puzzle). This program only solves Easy-rated sudokus.
 ```
 {
   "puzzle":[
