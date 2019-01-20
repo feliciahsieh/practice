@@ -4,7 +4,7 @@
 </p>
 
 ## Welcome
-This program solves the Sudoku project by calculating the set of possible values, then as each cell is solved, updates the list of possibilities. This program is written in Python3 with a few libraries. The code will solve Easy-rated puzzles. My blog on how I created this program is at https://medium.com/@feliciaSWE/solving-sudoku-with-python-numpy-and-set-95ca55f9ba01
+This program solves the Sudoku project by calculating the set of possible values, then as each cell is solved, updates the list of possibilities using NumPy and python's set() method. No recursion is used. This program is written in Python3. The code will solve Easy-rated puzzles. My blog on how I created this program is at https://medium.com/@feliciaSWE/solving-sudoku-with-python-numpy-and-set-95ca55f9ba01
 
 ## Table of Contents
 * [Requirements](#requirements)
@@ -12,11 +12,11 @@ This program solves the Sudoku project by calculating the set of possible values
 * [Usage](#usage)
 
 ## Requirements
-* Ubuntu 14.04 LTS
 * Python 3.4.3
-* Numpy (python3 library)
-* Pprint (python3 library)
-* Json (python3 library)
+* numpy (python3 library)
+* json (python3 library)
+* pprint (python3 library)
+* Ubuntu 14.04 LTS
 
 ## Installation
 In your terminal, git clone the directory with the following command:
@@ -32,7 +32,7 @@ To solve the sudoku puzzles stored in sudoku.json, at your shell prompt, type:
 ./sudoku.py
 ```
 
-You may store as many sudoku files as you need. My sudoku.json file has two unsolved puzzles.
+You may store as many sudoku files as you want solved. The current sudoku.json file has two unsolved puzzles.
 ```
 {
   "puzzle":[
