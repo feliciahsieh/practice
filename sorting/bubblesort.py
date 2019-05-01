@@ -18,5 +18,4 @@ startTime = time.time()
 result = bubblesort()
 
 print("\nFINAL:\n{}".format(result))
-
-print("Execution took {:1.6f} sec".format(time.time() - startTime))
+print("BUBBLESORT Execution took {:1.6f} sec".format(time.time() - startTime))

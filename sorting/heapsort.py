@@ -44,4 +44,4 @@ startTime = time.time()
 
 result = heapsort()
 print("\nFINAL:\n{}".format(result))
-print("Execution took {:1.6f} sec".format(time.time() - startTime))
+print("HEAPSORT  Execution took {:1.6f} sec".format(time.time() - startTime))

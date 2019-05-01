@@ -24,4 +24,4 @@ def shellsort(array=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
 startTime = time.time()
 result = shellsort()
 print("\nFINAL:\n{}".format(result))
-print("Execution took {:1.6f} sec".format(time.time() - startTime))
+print("SHELLSORT Execution took {:1.6f} sec".format(time.time() - startTime))

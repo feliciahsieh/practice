@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-# quicksort using recursion and python3 lists
+# mergesort using recursion
 import time
 
 
-def mergeSort(array=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
+def mergesort(array=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
     print("Splitting", array)
     if len(array) > 1:
         mid = len(array) // 2
         lefthalf = array[:mid]
         righthalf = array[mid:]
 
-        mergeSort(lefthalf)
-        mergeSort(righthalf)
+        mergesort(lefthalf)
+        mergesort(righthalf)
 
         i = j = k = 0
         while i < len(lefthalf) and j < len(righthalf):
@@ -40,6 +40,6 @@ def mergeSort(array=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
 startTime = time.time()
 
 print("START:\n")
-result = mergeSort()
+result = mergesort()
 print("\nFINAL:\n{}".format(result))
-print("Execution time: {} sec".format(time.time() - startTime))
+print("MERGESORT Execution time: {} sec".format(time.time() - startTime))

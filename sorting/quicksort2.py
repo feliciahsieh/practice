@@ -3,9 +3,10 @@
 import time
 
 
-def quickSort(alist=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
+def quickSort2(alist=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
     print("START:\n{}\n".format(alist))
-    quickSortHelper(alist, 0, len(alist) - 1)
+    alist = quickSortHelper(alist, 0, len(alist) - 1)
+    return alist
 
 
 def quickSortHelper(alist, first, last):
@@ -16,7 +17,7 @@ def quickSortHelper(alist, first, last):
         print(alist)
         quickSortHelper(alist, splitpoint + 1, last)
         print(alist)
-
+    return alist
 
 def partition(alist, first, last):
     pivotvalue = alist[first]
@@ -48,6 +49,6 @@ def partition(alist, first, last):
 
 
 startTime = time.time()
-result = quickSort()
+result = quickSort2()
 print("\nFINAL:\n{}".format(result))
-print("Execution took {:1.6f} sec".format(time.time() - startTime))
+print("QUICKSORTb Execution took {:1.6f} sec".format(time.time() - startTime))

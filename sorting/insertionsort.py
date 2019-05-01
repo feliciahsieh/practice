@@ -26,4 +26,4 @@ startTime = time.time()
 
 result = insertionsort()
 print("\nFINAL:\n{}".format(result))
-print("Execution took {:1.6f} sec".format(time.time() - startTime))
+print("INSERTION Execution took {:1.6f} sec".format(time.time() - startTime))

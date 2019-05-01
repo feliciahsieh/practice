@@ -18,4 +18,4 @@ def selectionsort(array=[23, 6, 1, 90, 30, 39, 99, 15, 88, 0]):
 startTime = time.time()
 result = selectionsort()
 print("\nFINAL:\n{}".format(result))
-print("Execution took {:1.6f} sec".format(time.time() - startTime))
+print("SELECTION Execution took {:1.6f} sec".format(time.time() - startTime))
